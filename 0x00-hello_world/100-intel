@@ -1,2 +1,4 @@
 #!/bin/bash
-gcc -S -masm=intel $CFILE
+base=$(basename "$CFILE" .c)
+gcc -S -masm=intel "$CFILE" -o "$base.s"
+export CFILE=main.c
