@@ -1,8 +1,9 @@
 #ifndef main_h
 #define main_h
 /*
- * main function
- *
+ * main - function _putchar
+ * is written by mbah
+ * Return:
  */
 
 int _putchar(char);
