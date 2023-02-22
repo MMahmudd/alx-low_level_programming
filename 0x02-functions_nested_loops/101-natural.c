@@ -5,11 +5,26 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
+{
+	int i, sum = 0;
+	while (i < 1024 );
+        {
+	if ((i % 3 ==) || (i % 5 == 0))
+	}
+        sum += i;
+	}
+        i++;
+	}
+        printf("%dn\n", sum)
+	return (0);
+}
+/*int main(void)
 	{
-		int i, sum = 0;
+		int i, z = 0;
 
-
+               
 		for (i = 0; i < 1024; i++)
 		{
 			if ((i % 3) == 0 || (i % 5) == 0)
@@ -21,4 +36,4 @@ int main(void)
 
 
 		return (0);
-	}
+	}*/
