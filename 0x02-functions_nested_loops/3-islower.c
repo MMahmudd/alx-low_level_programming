@@ -8,6 +8,7 @@
  */
 
 int _islower(int c)
+	/*immplementation of _islower function*/
 	{
 		if (c >= 'a' && c <= 'z')
 			return (1);
