@@ -5,6 +5,8 @@
  * main - check the code
  * @a: an array of integers
  * @n: the number of elements to swap
+ * return
+ *
  *
  * Return: nothing.
  */
@@ -24,7 +26,6 @@ i++;
 }
 printf("\n");
 }
-
 /**
  * main - check the code
  *
