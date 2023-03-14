@@ -1,42 +1,38 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /**
- * argstostr - main entry
- *
- * @ac: int input
- * @av: double pointer array
- *
- * Return: 0
- *
+ * *_realloc - reallocate memory size function
+ * @ptr: pointer to address of old memory location
+ * @old_size: unsigned int type of old memory size
+ * @new_size: unsigned int type for new memory size
+ * Return:  return pointer to array
  */
 
-char *argstostr(int ac, char **av)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	char *s;
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
+	if (new_size > old_size)
 	{
-		for (n = 0; av[i][n]; n++)
-			l++;
+		s = malloc(new_size);
+		free(ptr);
+		return (s);
 	}
-	l += ac;
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
+	if (new_size == old_size)
 	{
-		for (n = 0; av[i][n]; n++)
-		{
-			str[r] = av[i][n];
-			r++;
-		}
-		if (str[r] == '\0')
-		{
-			str[r++] = '\n';
-			}
-		return (str);
+		return (ptr);
 	}
+	if (ptr == NULL)
+	{
+		s = malloc(new_size);
+		free(ptr);
+		return (s);
+	}
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	return (ptr);
+}
