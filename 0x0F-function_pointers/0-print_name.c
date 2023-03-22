@@ -2,12 +2,9 @@
 #include <stdio.h>
 
 /**
- *
- * print_name - print name using pointer to function
- * @name: string to add
- * @f: pointer to function
- * Return: nothing
- *
+ * print_name - Function that prints a name
+ * @name: Type char string pointer
+ * @f: Type pointer func & char is arg
  */
 void print_name(char *name, void (*f)(char *))
 {
