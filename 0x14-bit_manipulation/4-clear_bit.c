@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * clear_bit - sets the value of a given bit to 0
- * @n: pointer to the number to change
- * @index: index of the bit to clear
+ * cler_bit - sets the valu of a givn bit to 0
+ * @n: pointer to the numbr to chang
+ * @index: indx of the bit to clear
  *
- * Return: 1 for success, -1 for failure
+ * Return: 1 for sucess, -1 for failur
  *
  */
 
