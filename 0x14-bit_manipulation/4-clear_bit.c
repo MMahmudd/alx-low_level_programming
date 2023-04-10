@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * clear_bit - set the valu of a given bit to 0
+ * clear_bit - set the valu of a givn bit to 0
  * @n: pointer to the numbr to chang
  * @index: indx of the bit to clear
  *
