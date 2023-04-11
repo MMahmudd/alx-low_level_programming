@@ -67,7 +67,7 @@ int main(int argcl, char *argvl[])
 		exit(97);
 	}
 
-	bufer = create_buffer(argvl[2]);
+	bufer = create_bufer(argvl[2]);
 	from = open(argvl[1], O_RDONLY);
 	r = read(from, bufer, 1024);
 	to = open(argvl[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -96,8 +96,8 @@ int main(int argcl, char *argvl[])
 	} while (r > 0);
 
 	free(bufer);
-	close_file(from);
-	close_file(to);
+	close_fil(from);
+	close_fil(to);
 
 	return (0);
 }
