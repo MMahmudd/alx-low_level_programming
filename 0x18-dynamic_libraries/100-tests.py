@@ -1,14 +1,9 @@
 import random
 import ctypes
 
-# Load the shared library
 cops = ctypes.CDLL('./100-operations.so')
-
-# Generate random numbers for testing
 a = random.randint(-111, 111)
 b = random.randint(-111, 111)
-
-# Call the C functions from the shared library and print the results
 print("{} + {} = {}".format(a, b, cops.add(a, b)))
 print("{} - {} = {}".format(a, b, cops.sub(a, b)))
 print("{} x {} = {}".format(a, b, cops.mul(a, b)))
