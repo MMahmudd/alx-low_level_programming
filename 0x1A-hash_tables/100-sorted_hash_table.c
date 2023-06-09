@@ -63,7 +63,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	tmp_p = ht->shead;
 	while (tmp_p)
 	{
-		if (strcmp(tmp->key, key) == 0)
+		if (strcmp(tmp_p->key, key) == 0)
 		{
 			free(tmp_p->value);
 			tmp_p->value = val_copy;
@@ -87,7 +87,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	new_n->value = val_copy;
 	new_n->next = ht->array[index_i];
-	ht->array[index] = new_n;
+	ht->array[index_i] = new_n;
 
 	if (ht->shead == NULL)
 	{
@@ -105,18 +105,17 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		tmp_n = ht->shead;
+		tmp_p = ht->shead;
 		while (tmp_p->snext != NULL && strcmp(tmp_p->snext->key, key) < 0)
-			tmp = tmp_p->snext;
+			tmp_p = tmp_p->snext;
 		new_n->sprev = tmp_p;
 		new_n->snext = tmp_p->snext;
 		if (tmp_p->snext == NULL)
 			ht->stail = new_n;
 		else
-			tmp_n->snext->sprev = new_n;
-		tmp_n->snext = new_n;
+			tmp_p->snext->sprev = new_n;
+		tmp_p->snext = new_n;
 	}
-
 	return (1);
 }
 
@@ -128,8 +127,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * Return: If a key couldn't find - NULL.
  *         else - return tha value that associated with key in ht.
  */
-
-char *hash_table_get(const shash_table_t *ht, const char *key)
+char *hash_table_get(const hash_table_t *ht, const char *key);
 {
 	shash_node_t *node_n;
 	unsigned long int index_i;
@@ -142,7 +140,7 @@ char *hash_table_get(const shash_table_t *ht, const char *key)
 		return (NULL);
 
 	node_n = ht->shead;
-	while (node_n != NULL && strcmp(node->key_n, key) != 0)
+	while (node_n != NULL && strcmp(node_n->key, key) != 0)
 		node_n = node_n->snext;
 
 	return ((node_n == NULL) ? NULL : node_n->value);
@@ -223,7 +221,7 @@ void shash_table_delete(shash_table_t *ht)
 		tmp_p = node_n->snext;
 		free(node_n->key);
 		free(node_n->value);
-		free(node);
+		free(node_n);
 		node_n = tmp_p;
 	}
 
