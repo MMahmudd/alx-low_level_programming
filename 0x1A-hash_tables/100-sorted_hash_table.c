@@ -127,7 +127,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  * Return: If a key couldn't find - NULL.
  *         else - return tha value that associated with key in ht.
  */
-char *hash_table_get(const hash_table_t *ht, const char *key)
+char *shash_table_get(const shash_table_t *ht, const char *key)
 {
 	shash_node_t *node_n;
 	unsigned long int index_i;
