@@ -4,8 +4,7 @@
  * hash_table_get - a function that retrieves a value
  *                  associated with a key in a hash_table.
  * @ht: A pointer to the hash_table.
- * @key: A key to abtain a value, key looking for 
- *
+ * @key: A key to abtain a value, key looking for.
  * Return: If a key couldn't find - NULL.
  *         else - return tha value that associated with key in ht.
  */
