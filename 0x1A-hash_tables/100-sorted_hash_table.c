@@ -221,7 +221,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	/* Function implementation of shash_table_delete */
-	/ Function implementation of shash_table_delete
 	shash_table_t *head_of = ht;
 	shash_node_t *node_n, *tmp_p;
 
