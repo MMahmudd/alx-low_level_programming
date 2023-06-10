@@ -8,7 +8,7 @@ void shash_table_print_rev(const shash_table_t *ht);
 void shash_table_delete(shash_table_t *ht);
 
 /**
- * hash_table_create - a function of a hash table.
+ * shash_table_create - a function of a hash table.
  * @size: A size of an array.
  *
  * Return: If wrongly retrun - NULL.
@@ -18,6 +18,7 @@ void shash_table_delete(shash_table_t *ht);
 
 shash_table_t *shash_table_create(unsigned long int size)
 {
+	/* Function implementation of shash_table_create */
 	shash_table_t *ht;
 	unsigned long int ii;
 
@@ -38,7 +39,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
- * hash_table_set - Add an element in a hash_table.
+ * shash_table_set - Add an element in a hash_table.
  * @ht: A pointer to the hash_table.
  * @key: The key to adding - can't be an empty _tring.
  * @value: An associated a vlaue  with a key.
@@ -50,6 +51,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
+	/* Function implementation of shash_table_set */
 	shash_node_t *new_n, *tmp_p;
 	char *val_copy;
 	unsigned long int index_i;
@@ -122,7 +124,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 }
 
 /**
- * hash_table_get - a function that retrieves a value
+ * shash_table_get - a function that retrieves a value
  *                  associated with a key in a hash_table.
  * @ht: A pointer to the hash_table.
  * @key: A key to abtain a value, key looking for.
@@ -132,6 +134,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
  */
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
+	/* Function implementation of shash_table_get */
 	shash_node_t *node_n;
 	unsigned long int index_i;
 
@@ -150,7 +153,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
- * hash_table_print - Prints the key-value pairs stored in a hash_table.
+ * shash_table_print - Prints the key-value pairs stored in a hash_table.
  * @ht: A pointer to the hash_table to be printed.
  *
  * return: if the hash is NULL, nothing is printed.
@@ -159,11 +162,11 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  *              in the order they appear in the array of the hash_table.
  *              the format of format of the output is as follows
  *              key value, key value.
- * Description: Write a function that prints a hash table.
  **/
 
 void shash_table_print(const shash_table_t *ht)
 {
+	/* Function implementation of shash_table_print */
 	shash_node_t *node_n;
 
 	if (ht == NULL)
@@ -190,6 +193,7 @@ void shash_table_print(const shash_table_t *ht)
  */
 void shash_table_print_rev(const shash_table_t *ht)
 {
+	/* Function implementation of shash_table_print_rev */
 	shash_node_t *node_n;
 
 	if (ht == NULL)
@@ -208,7 +212,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 }
 
 /**
- * hash_table_delete - A function that used to deletes a hash_table.
+ * shash_table_delete - A function that used to deletes a hash_table.
  * @ht: A pointer to a hash_table.
  *
  * Description: Write a function that deletes a hash_table.
@@ -216,6 +220,8 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 void shash_table_delete(shash_table_t *ht)
 {
+	/* Function implementation of shash_table_delete */
+	/ Function implementation of shash_table_delete
 	shash_table_t *head_of = ht;
 	shash_node_t *node_n, *tmp_p;
 
